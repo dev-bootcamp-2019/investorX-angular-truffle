@@ -1,0 +1,151 @@
+
+/* notify - pulse - expandOpen - fadeIn - slideRight - slideLeft - slideDown - slideUp
+======================================================================================
+CSS3 ANIMATION
+==============================================
+*/
+.delay {animation-delay: 0.5s;}
+.delay1 {animation-delay: 0.8s;}
+.delay2 {animation-delay: 1.1s;}
+.delay3 {animation-delay: 1.4s;}
+
+/*
+==============================================
+notify
+==============================================
+*/
+@keyframes notify {
+  0%  {box-shadow: 0 0 0 0 hsla(0, 0%, 81%, .9);}
+  70% {box-shadow: 0 0 0 10px hsla(0, 0%, 81%, 0);}
+  to  {box-shadow: 0 0 0 0 hsla(0, 0%, 81%, 0);}
+}
+
+/*
+==============================================
+pulse
+==============================================
+*/
+@keyframes pulse {
+	0% { transform: scale(0.9); opacity: 0.99; }
+    50% { transform: scale(1); opacity: .66; }
+    100% { transform: scale(0.9); opacity: 0.99; }
+}
+
+/*
+==============================================
+slideUp
+==============================================
+*/
+.slideUp{
+	animation-name: slideUp;
+	animation-duration: 1s;
+	animation-timing-function: ease;
+	visibility: visible !important;
+}
+@keyframes slideUp {
+	0%   {transform: translateY(100%);}
+	50%  {transform: translateY(-8%);}
+	65%  {transform: translateY(4%);}
+	80%  {transform: translateY(-4%);}
+	95%  {transform: translateY(2%);}
+	100% {transform: translateY(0%);}
+}
+
+/*
+==============================================
+slideDown
+==============================================
+*/
+.slideDown{
+	animation-name: slideDown;
+	animation-duration: 1s;
+	animation-timing-function: ease;
+	visibility: visible !important;
+}
+@keyframes slideDown {
+	0%   {transform: translateY(-100%);}
+	50%  {transform: translateY(8%);}
+	65%  {transform: translateY(-4%);}
+	80%  {transform: translateY(4%);}
+	95%  {transform: translateY(-2%);}
+	100% {transform: translateY(0%);}
+}
+
+/*
+==============================================
+slideLeft
+==============================================
+*/
+.slideLeft{
+	animation-name: slideLeft;
+	animation-duration: 1s;
+	animation-timing-function: ease-in-out;
+	visibility: visible !important;
+}
+@keyframes slideLeft {
+	0%   {transform: translateX(150%);}
+	50%  {transform: translateX(-8%);}
+	65%  {transform: translateX(4%);}
+	80%  {transform: translateX(-4%);}
+	95%  {transform: translateX(2%);}
+	100% {transform: translateX(0%);}
+}
+
+/*
+==============================================
+slideRight
+==============================================
+*/
+.slideRight{
+	animation-name: slideRight;
+	animation-duration: 1s;
+	animation-timing-function: ease-in-out;
+	visibility: visible !important;
+}
+@keyframes slideRight {
+	0%   {transform: translateX(-100%);}
+	//50%  {transform: translateX(8%);}
+	//65%  {transform: translateX(-4%);}
+	//80%  {transform: translateX(4%);}
+	//95%  {transform: translateX(-2%);}
+	100% {transform: translateX(0%);}
+}
+
+
+
+/*
+==============================================
+fadeIn
+==============================================
+*/
+.fadeIn{
+	animation-name: fadeIn;
+	animation-duration: .75s;
+	animation-timing-function: ease-in-out;
+	visibility: visible !important;
+}
+@keyframes fadeIn {
+	0%   {transform: scale(0);opacity: 0.0;}
+/* 	60%  {transform: scale(1.1);}
+	80%  {transform: scale(0.9); opacity: 1;} */
+	100% {transform: scale(1);opacity: 1;}
+}
+
+/*
+==============================================
+expandOpen
+==============================================
+*/
+.expandOpen{
+	animation-name: expandOpen;
+	animation-duration: 1.2s;
+	animation-timing-function: ease-out;
+	visibility: visible !important;
+}
+@keyframes expandOpen {
+	0%   {transform: scale(1.8);}
+	50%  {transform: scale(0.95);}
+	80%  {transform: scale(1.05);}
+	90%  {transform: scale(0.98);}
+	100% {transform: scale(1);}
+}

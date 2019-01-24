@@ -1,0 +1,33 @@
+<div class="h2 font-weight-bold m-30 mb-5 px-4 py-3 bg-lightest text-primary">Nomination</div>
+
+<div class="form-group-m">
+  <div class="form-group row">
+    <label class="col-md-2 col-form-label">Name
+      <span class="require">*</span>
+    </label>
+    <div class="col-md-4">
+      <input pInputText type="text" [(ngModel)]="name" class="form-control" 
+        pTooltip='{{this.electionService.isCurrentUserTheElectionChairperson ? "Enter the guru name" : "Choose your name"}}'
+        tooltipPosition="top" 
+        placeholder='{{this.electionService.isCurrentUserTheElectionChairperson ? "Guru name" : "Your nickname"}}'>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-md-2 col-form-label">Wallet
+      <span class="require">*</span>
+    </label>
+    <div class="col-md-10">
+      <div class="input-group" style="width: 430px; font-family: courier new;">
+        <p-inputMask [disabled]="!this.electionService.isCurrentUserTheElectionChairperson" 
+          [(ngModel)]="this.electionService.isCurrentUserTheElectionChairperson ? wallet : this.web3Service.wallet" 
+          pTooltip='{{this.electionService.isCurrentUserTheElectionChairperson ? "Enter the Guru Wallet" : "This is your wallet"}}'
+          tooltipPosition="top" class="form-control ltr" mask="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" placeholder="guru wallet address"
+          ariaLabel="guru wallet address" characterPattern="[x0-9A-Fa-f]"></p-inputMask>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="mx-30 p-4 text-right w-100 actionFtr">
+  <button pButton (click)="nominateGuru()" class="btn btn-outline-darkRed" 
+    label='{{this.electionService.isCurrentUserTheElectionChairperson ? "Nominate a Guru" : "Nominate"}}'></button>
+</div>

@@ -1,0 +1,884 @@
+
+/* =============================================================================
+    TABLE OF CONTENT
+================================================================================
+0. Main Colors
+1. Fonts
+    1.1 Font Awesome
+2. Common Styles (Padding, Margin, a, headings | etc)
+3. Alerts
+4. Navigation Sidebar
+5 Header Styles (Header, Breadcrumb)
+    5.1 Header
+    5.2 Breadcrumb
+    5.3 Footer
+
+6 Main Content Common Styles (Section Title, Blocks, Block Heading, Block Divide Heading , Hr)
+    6.1 Page container
+    6.2 Page Title
+    6.3 Status Block Header
+    6.4 hr Devider
+
+7. Form Elements (Inputs, CheckBox, Login & Register Div)
+8. Tables Styles
+9. Package Cards
+10. wizard
+11. Media Queries
+
+/* Bootstrap variables --------------------------------------------------------------*/
+
+@import "../scss/_bootstrap/functions";
+@import "../scss/_bootstrap/variables-reference";
+// Custom
+@import "../scss/_includes/vars";
+/* 1.2 Font Awesome */
+
+@import "../scss/_fontawesome/fontawesome.scss";
+@import "../scss/_fontawesome/fa-regular.scss";
+/* Primeng ..............................................................................*/
+
+@import "../scss/../scss/primeng/primeng.css";
+@import '../scss/primeng/variables';
+@import '../scss/primeng/_theme';
+// Custom
+@import "../scss/primeng/over-primng";
+/* Bootstrap v4.0.0-beta.2 --------------------------------------------------------------*/
+
+@import "../scss/_bootstrap/styles";
+/* Custom styles */
+
+@import "../scss/_includes/mixins";
+@import "../scss/_includes/animation";
+@import "../scss/_includes/animation-svg";
+@import "../scss/_includes/login";
+/*------------------------------------------------------------
+0. Bootstrap overrides
+--------------------------------------------------------------*/
+
+//@import "../scss/_includes/vars";
+/*------------------------------------------------------------*/
+
+/*------------------------------------------------------------
+ 1. Fonts | Import
+--------------------------------------------------------------*/
+
+/* 1.1 Font Awesome */
+
+//@import "../scss/_fontawesome/fontawesome.scss";
+//@import "../scss/_fontawesome/fa-regular.scss";
+/*------------------------------------------------------------
+ 2. Common Styles | Padding, Margin, a, headings | etc.
+--------------------------------------------------------------*/
+
+html {
+  overflow-x: hidden;
+}
+
+// body {
+//   background: #eee url("../images/publicationsbg.png");
+//   /*  margin-bottom: 100px; */
+//   -webkit-font-smoothing: antialiased;
+//   -moz-osx-font-smoothing: grayscale;
+//   -webkit-text-size-adjust: 100%;
+// }
+
+
+
+
+*::selection {
+  background: $light;
+  color: $gray6
+}
+
+*::-moz-selection {
+  background: $light;
+  color: $gray6
+}
+
+*::-webkit-selection {
+  background: $light;
+  color: $gray6
+}
+
+
+@import "../scss/_includes/_alert.scss";
+@import "../scss/_includes/_layout.scss";
+
+@import "../scss/_includes/_tables.scss";
+/*==========================================================
+  5 Header Styles (Header, Footer, Breadcrumb)
+==========================================================*/
+
+/* 5.1 Header */
+
+.hdr{
+  height: 240px;
+  z-index: 700;
+  transition: all .2s ease-in-out;
+  background: url(../images/investorX-banner.png) no-repeat scroll center center;
+  background-size: cover;
+}
+
+.hdrcont {
+  left: 0;
+  right: 0;
+}
+
+.hdrLogo {
+  width: 7rem;
+  height: 135px;
+}
+
+.logo {
+  max-width: 150px !important;
+}
+
+.ftrLogo {
+  width: 10rem;
+  height: 5rem
+}
+
+@media (max-width: 768px) {
+  #profile {
+    visibility: hidden;
+    opacity: 0;
+    max-height: 1px;
+    transition: visibility 275ms, opacity 275ms, max-height .28s;
+    transition-timing-function: ease-out;
+  }
+  .profileActive #profile {
+    visibility: visible;
+    opacity: 1;
+    max-height: 4000px;
+    transition: visibility .5s, opacity .5s, max-height .5s;
+    transition-timing-function: ease-in-out;
+  }
+}
+
+.profile {
+  background-color: rgba(255, 255, 255, 0.15)
+}
+
+
+.ui-overlaypanel::before {
+  border-bottom: 17px solid $lighter;
+  border-left: 17px solid transparent;
+  border-right: 17px solid transparent;
+  content: "";
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: -17px;
+}
+
+/* .profile-show{
+  visibility: visible;
+    opacity: 1;
+    max-height: 4000px;
+    transition: visibility .5s,opacity .5s,max-height .5s;
+    transition-timing-function: ease-in-out;
+}
+.profile-hide{
+  visibility: hidden;
+    opacity: 0;
+    max-height: 1px;
+    transition: visibility 275ms,opacity 275ms,max-height .28s;
+    transition-timing-function: ease-out;
+} */
+
+.animate-if {
+  display: block;
+  border: 1px solid;
+  transition: height 0.5s ease-out;
+  overflow: hidden;
+  height: 100px;
+}
+
+.animate-if.ng-enter,
+.animate-if.ng-leave.ng-leave-active {
+  display: block !important;
+  height: 0px;
+}
+
+.animate-if.ng-leave,
+.animate-if.ng-enter.ng-enter-active {
+  height: 100px;
+}
+
+/*  */
+
+.mTop {
+  margin-top: 30px;
+}
+
+@media (max-width: 766px) {
+  .mTop {
+    margin-top: 15px;
+  }
+}
+
+@media (min-width: 767px) {
+  .w300 {
+    min-width: 300px;
+    margin-top: 10px
+  }
+}
+
+@media (max-width: 767px) {
+  .w300 {
+    width: 100%;
+    background-color: $lighter;
+    border: 0;
+  }
+}
+
+.profile .card-title {
+  margin-bottom: .50rem;
+}
+
+.loggedActions a {
+  &:focus,
+  &:hover {
+    color: #2a7fc2;
+  }
+  span.notif {
+    animation: notify 1.5s infinite linear;
+    font-size: 10px;
+    display: inline-block;
+    min-width: 14px;
+    height: 14px;
+    background-color: #d95555;
+    padding: 5px 4px 2px;
+    line-height: 4px;
+    color: #fff;
+    text-align: center;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    right: -5px;
+  }
+}
+
+.notifBox {
+  border-right: 2px #162C53 solid
+}
+
+/*=======================================================================================
+  7 Form Elements (Inputs, CheckBox, Login & Register Div)
+=========================================================================================*/
+
+@each $color,
+$value in $theme-colors {
+  .btn-outline-#{$color} {
+    background-color: $white
+  }
+}
+
+.btn {
+  min-width: 100px;
+  margin-right: 10px;
+  cursor: pointer;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  &:last-child {
+    margin-right: 0;
+  } // Disabled comes first so active can properly restyle
+  &.disabled,
+  &:disabled {
+    opacity: .45;
+  }
+}
+
+.btn-wrap{
+  white-space: pre-wrap !important
+}
+
+.btn-sm,
+.btn-group-sm>.btn {
+  padding: 0rem .5rem .2rem !important;
+  font-size: 0.88rem
+}
+
+.caln {
+  background-color: #FAFAFA;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    background-color: $lighter;
+  }
+}
+
+svg.calendar {
+  width: 1.25rem;
+  height: 1.25rem;
+  fill: $gray9;
+}
+
+.require {
+  color: $red;
+  padding: 0 5px;
+}
+
+.col-form-label {
+  color: $gray9
+}
+
+@media (max-width: 767px) {
+  p.form-control-plaintext {
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: -.5rem
+  }
+}
+
+.form-control {
+  // Placeholder
+  color: $blueDark;
+  &::placeholder,
+  &::placeholder input {
+    color: $input-placeholder-color;
+    opacity: 1;
+  }
+  &:disabled,
+  &[readonly],
+  &:disabled input,
+  &[readonly] input {
+    background-color: $input-disabled-bg;
+    opacity: 1;
+  }
+}
+
+/* Export buttons */
+
+.export .btn {
+  padding: 5px 10px 7px 5px;
+  i {
+    font-size: 1.3rem;
+    vertical-align: middle;
+  }
+}
+
+/* Custom radio - checkbox - DDL
+----------------------------------- */
+
+.custom-control-indicator {
+  border: 2px $light solid;
+  transition: all 0.2s linear;
+}
+
+.custom-control-input {
+  &:checked~.custom-control-indicator {
+    border: 2px $orange solid;
+    background-size: 70%;
+  }
+}
+
+/* loading effect */
+
+/* .inline-loading {
+  width: 30px;
+  height: 30px;
+  display: block;
+  min-height: 30px;
+  &:before {
+    content: "";
+    border: 4px solid #e0dddd;
+    border-top: 4px solid #BB954C;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    top: 0;
+    right: 0;
+  }
+} */
+
+/*Tabs*/
+
+.nav-tabs {
+  border-bottom: 2px solid #f4f4f4;
+  .nav-link {
+    color: $gray9;
+    font-size: 1.375rem;
+    padding: 10px 25px 15px;
+    font-weight: bold;
+    border: 0;
+    border-bottom: 2px transparent solid;
+    &:focus,
+    &:hover {
+      border: 0;
+      border-bottom: 2px transparent solid;
+    }
+    &.active {
+      border: 0;
+      border-bottom: 2px gray("444") solid;
+      color: #333;
+    }
+  }
+}
+
+/*=====================================================================
+00. Misc
+=====================================================================*/
+
+
+/* .far{
+  width: 1.25em;
+  height: 1em;
+  vertical-align: baseline;
+  display: inline-block;
+  fill: currentColor;
+} */
+
+.mx-30 {
+  margin-left: -30px;
+  margin-right: -30px
+}
+
+.m-30 {
+  margin: -30px;
+}
+
+.left {
+  right: 0;
+}
+
+.currentColor {
+  fill: currentColor;
+  color: currentColor
+}
+
+.rtl-180 {
+  transform: scale(-1, 1);
+}
+
+.ltr-180 {
+  transform: scale(1, 1);
+}
+
+.pageContent {
+  padding-bottom: 90px !important
+}
+
+.actionFtr {
+  position: absolute;
+  bottom: 0;
+  border-top: 2px #EFECE8 solid;
+}
+
+.box-shadow {
+  box-shadow: 0px 0px 14.7px 0.3px rgba(0, 0, 0, 0.08);
+}
+
+.border-b {
+  border-bottom: 2px $light solid
+}
+
+/* Modal */
+
+.modal-header .close {
+  margin: -15px auto -15px -15px;
+  line-height: 0;
+  font-size: 2.5rem;
+}
+
+.roles label.custom-control {
+  margin-bottom: 0
+}
+
+.roles .role {
+  border-bottom: 1px $light solid
+}
+
+.step {
+  display: none;
+}
+
+div.step:first-child {
+  display: block;
+}
+
+.mapContainer {
+  height: 300px;
+  width: 100%;
+}
+
+.requestNumber>span {
+  border: 3px solid #F6F6F6;
+  padding: 10px 50px
+}
+
+.arrowS::before {
+  display: inline-block;
+  margin-top: -28px;
+  height: 35px;
+  width: 35px;
+  background-color: #FFF;
+  content: "";
+  transform: rotate(45deg);
+}
+
+.fa-sign-out {
+  transform: scale(1, 1);
+}
+
+.fa-arrow-circle-right {
+  transform: scale(-1, 1);
+}
+
+/* 6.4 hr Devider */
+
+hr.dashedevider {
+  height: 10px;
+  border: 0;
+  border-bottom: 2px $lighter dashed;
+}
+
+hr.pagedevider {
+  height: 1px;
+  border: 0;
+  border-bottom: 2px $lighter solid;
+}
+
+.m-title {
+  margin-top: 0.625rem;
+  margin-bottom: 1.7rem
+}
+
+.g_btns {
+  bottom: 0
+}
+
+.headroom {
+  z-index: 700 !important;
+  box-shadow: 0px 0px 14.7px 0.3px rgba(0, 0, 0, 0.35);
+}
+
+hr.wizarddevider {
+  margin: 15px -30px 15px;
+  height: 30px;
+  border: 0;
+  background: linear-gradient(to top, $white 0%, $lighter 100%);
+}
+
+/*=====================================================================
+00. custom
+=====================================================================*/
+
+.wrapper {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+
+@media all and (max-width: 1200px) {
+  .topNav{width:450px;}
+}
+@media all and (max-width: 1200px) {
+  .topNav{width:450px;}
+}
+
+
+/* @media all and (max-width: 1200px) {
+.showMenu{}
+.showMenuPopup{}
+} */
+
+
+@media all and (min-width: 600px) {
+  .aside {
+    flex: 1 auto;
+  }
+}
+
+.btn-orange {
+  color: #FFF
+}
+
+.productRzlt {
+  &:hover {
+    background-color: $lighter
+  }
+  .closex {
+    visibility: hidden;
+    cursor: pointer;
+  }
+  &:hover .closex {
+    visibility: visible
+  }
+}
+
+
+
+.products .popover {
+  width: 100%;
+  max-width: unset;
+  box-shadow: unset;
+  left: 0 !important;
+}
+
+.products .popover .arrow {
+  display: none;
+}
+
+.product.select {
+  border-bottom: 2px $success solid;
+  background-color: #F6FFF6 !important;
+}
+
+.steps::before {
+  background-color: #F9F9F9;
+  content: "";
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 160px;
+}
+
+.bg-lightest {
+  background-color: #5b6568;
+}
+
+.check {
+  border: 2px $lighter dashed;
+}
+
+.box {
+  height: 55px;
+  display: table;
+  background: #BB954C;
+  margin: -60px 0 0 -45px;
+  z-index: 1;
+  transform: skewY(2deg);
+  >span {
+    transform: skewY(-2deg) !important;
+    display: inline-block;
+  }
+}
+
+.scrollbar {
+  margin-left: 15px;
+  float: left;
+  max-height: 250px;
+  background: #F5F5F5;
+  overflow-y: scroll;
+  margin-bottom: 25px;
+  margin-top: 5px;
+  width: calc(100% - 30px);
+}
+
+/* .force-overflow {
+  min-height: 300px;
+} */
+
+#style-3::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #F5F5F5;
+}
+
+#style-3::-webkit-scrollbar {
+  width: 6px;
+  background-color: #F5F5F5;
+}
+
+#style-3::-webkit-scrollbar-thumb {
+  background-color: #C6C6C6;
+}
+
+.inputIcon.input-group {
+  input {
+    border-right: 0;
+    width: 100%;
+  }
+  .input-group-addon {
+    background-color: #FFF;
+    border-left: 0;
+    .fa {
+      font-size: 18px;
+      color: #999;
+    }
+  }
+}
+
+.bignumber {
+  color: #DADADA;
+  line-height: 28px;
+}
+
+.btn-table {
+  font-size: 13px !important;
+  min-width: 60px;
+}
+
+
+
+
+
+/*=====================================================================
+Page Without Title
+=====================================================================*/
+
+.noFrame .pageContent.box-shadow {
+  box-shadow: 0 0 0 0 !important;
+}
+
+.noFrame .pageContent.padd30 {
+  padding: 0 !important;
+}
+
+.noFrame .pageContent.bg-white {
+  background-color: transparent !important;
+}
+
+.noFrame .layout-wrapper {
+  padding: 0
+}
+
+
+
+
+
+
+
+
+
+
+
+.dot.active{
+  background: $orange;
+}
+.h-related-logo{
+  .dot{
+    background: $light !important;
+    &.active{
+      background: $blueDark !important;
+    }
+  }
+}
+
+
+
+
+.homePopOver{
+  .popover{
+    padding: 1rem 1.5rem;
+    width:300px;
+    margin-top: -20px;
+  }
+  .arrow{
+    left: 46%;
+    right: unset;
+    top: 100%;
+    border-top: 10px solid currentColor;
+    border-bottom: 0 solid #F0F0F0;
+    border-right: 15px solid transparent;
+    border-left: 15px solid transparent;
+  }
+}
+
+@media (max-width: 991px) {
+  .homePopOver .popover{
+    right: 0;
+    margin-top: 0;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+.overlay {
+  position: relative;
+}
+
+.header-area {
+  background: #000000 /*url(../images/header-gb.jpg)*/ no-repeat scroll center center / cover;
+}
+.overlay:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+}
+
+.overlay:before, .sky-bg {
+  background: #75cbe7;
+  background: -webkit-gradient(linear, left top, left bottom, from(#75cbe7), to(#138fc2));
+  background: linear-gradient(to bottom, #75cbe7 0%, #138fc2 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#75cbe7', endColorstr='#138fc2', GradientType=0);
+  color: #ffffff;
+}
+.v-center {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+}
+.fixed, .absolute {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.full-height {
+  width: 100%;
+  height: 100vh;
+}
+
+.loginWidth{
+  width: 600px
+}
+
+
+
+/*=====================================================================
+11. Media Queries
+=====================================================================*/
+
+/* Extra small devices (portrait phones, less than 576px) */
+
+@media (max-width: 575px) {
+  html {
+    font-size: 15px
+  }
+  .btn-mobile {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px
+  }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+
+@media (min-width: 576px) and (max-width: 767px) {}
+
+/* Medium devices (tablets, 768px and up) */
+
+@media (min-width: 768px) and (max-width: 991px) {}
+
+/* Large devices (desktops, 992px and up) */
+
+@media (min-width: 992px) and (max-width: 1199px) {}
+
+/* Large devices (desktops, 992px and up) */
+
+@media (min-width: 1025px) and (max-width: 1199px) {}
+
+/* Extra large devices (large desktops, 1200px and up) */
+
+@media (min-width: 1200px) {}
+
+@media (min-width: 1400px) {}

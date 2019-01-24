@@ -1,0 +1,174 @@
+/******************************************************
+  Flex Layout
+*******************************************************/
+
+.ie-stickyFooter {
+  display:flex;
+}
+
+#page {
+  width:100%;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+
+
+.layout-wrapper {
+  flex-grow:1;
+}
+.layout-main {
+  order: 2;
+
+  width: 100%;
+  transition: all 0.3s;
+
+}
+
+.liftNav {
+  order: 1;
+  flex: 1;
+  width: 100%;
+}
+
+.layout-menu-container {
+  width: 250px;
+  background-color: #ffffff;
+  background-image: linear-gradient(to right, #ffffff, #ffffff);
+  transition: all 0.3s;
+
+}
+
+
+
+.footer {
+  background: #fff;
+}
+jhi-footer:before {
+  height:10px;
+  width:100%;
+  content: "";
+  display: inline-block;
+  background-color:$darkRed;
+}
+
+
+
+
+
+/*==================================================================================================
+  6 Main Content Common Styles (Section Title, Blocks, Block Heading, Block Divide Heading , Hr)
+====================================================================================================*/
+.padd30 {
+  padding: 30px 30px 0 30px !important ;
+}
+
+.layout-mask {
+  opacity: 0
+}
+.layout-menu-static-active .layout-mask {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  opacity: 0.7;
+  background-color: #424242;
+  top: 0;
+  right: 0;
+  z-index: 698;
+}
+
+
+
+
+
+@media (min-width: 1025px) {
+    .layout-menu-static-inactive {
+      .layout-menu-container {
+        margin-left: -275px;
+        opacity: 0;
+      }
+    }
+}
+
+@media (max-width: 1024px) {
+    .layout-menu-container {
+      margin-left: -280px;
+    }
+    .layout-menu-static-active .layout-menu-container {
+      margin-left: 0;
+      width: calc(100% - 30px) !important;
+      opacity: 1;
+    }
+    .layout-mask {
+        display: block;
+      }
+}
+
+
+
+.layout-main{
+  flex: 10 1 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-auto{ flex: auto}
+
+
+
+
+   /* toggle*/
+
+   .toggleContainer{
+
+   }
+   #menu-button {
+    color: #234b7d;
+    width: 100%;
+    position: relative;
+    display: inline-flex;
+    z-index: 701;
+    transition: all 0.3s;
+
+    span {
+      display: block;
+      background-color: #444;
+      height: 3px;
+      width: 25px;
+      margin-top: 4px;
+      margin-bottom: 4px;
+      transform: rotate(0deg);
+      position: relative;
+      left: 0;
+      opacity: 1;
+      &:nth-child(1),
+      &:nth-child(3) {
+        transition: transform .35s ease-in-out;
+      }
+    }
+    &:not(.menu-button-rotate) span {
+      &:nth-child(1) {
+        position: absolute;
+        left: 12px;
+        top: 10px;
+        transform: rotate(135deg);
+        opacity: 0.9;
+      }
+      &:nth-child(2) {
+        height: 12px;
+        visibility: hidden;
+        background-color: transparent;
+      }
+      &:nth-child(3) {
+        position: absolute;
+        left: 12px;
+        top: 10px;
+        transform: rotate(-135deg);
+        opacity: 0.9;
+      }
+    }
+  }
+
+
+
+

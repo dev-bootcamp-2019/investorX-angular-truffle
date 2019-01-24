@@ -1,0 +1,32 @@
+/*=====================================================================
+8. Tables Styles
+=====================================================================*/
+/* Action icons colors */
+table {
+  .far {
+    font-size: 1.25rem;
+    color: $gray9;
+  }
+  .eye {
+    fill: #996BB1;
+  }
+  .unlock {
+    fill: #A58138;
+  }
+  .pencil {
+    fill: #4DB0CB;
+  }
+
+  th{ color: $gray4;}
+  td{ color: $gray6;}
+  .badge {
+    min-width: 6rem;
+    color: #FFF;
+    padding-bottom: .5rem;
+    font-size: 13px;
+  }
+  thead{
+    border-bottom: 2px $light solid;
+  }
+}
+

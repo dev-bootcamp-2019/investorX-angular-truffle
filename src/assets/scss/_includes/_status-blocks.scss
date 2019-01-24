@@ -1,0 +1,112 @@
+/* 
+rejected
+canceled
+accepted
+unconfirmed
+underProcess
+*/
+
+@mixin svg-img($color) {
+  border-bottom-color: $color;
+  .svg {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 767 202.3'%3E%3Cpath fill='#{$color}' d='M767.2-.7h-656l-100 204h756m-663-204h-3.9L.2 203.3h4'/%3E%3C/svg%3E");
+  }
+
+  .TMsg{
+    color: lighten($color, 15%)
+  }
+}
+
+
+
+.svg {
+  background-repeat: no-repeat;
+  background-size:600px 150px;
+  background-position: left 0;
+  [dir='rtl'] & {
+    background-position: right 0;
+  }
+}
+
+.PageMsg {
+  overflow: hidden;
+  font-size: 1.25rem;
+  height: 100px;
+  border-bottom-width:3px;
+  border-bottom-style: solid; 
+}
+.TMsg {
+  animation: slideRight 2s;
+  padding-right: 50px;
+  font-size: 3.5rem;
+
+  [dir='rtl'] & {
+    margin-top: -20px
+  }
+}
+
+.rejectedAlert {
+  background-color: #FBF7F7;
+  margin: -20px -30px 20px;
+  padding: 20px 30px;
+}
+.rejected {
+  background-color: #FBF7F7;
+  @include svg-img($redDark);
+}
+
+.canceled {
+  background-color: #F6F6F6;
+  @include svg-img($gray9);
+}
+
+.accepted {
+  background-color: #FCFFFB;
+  @include svg-img($greenDark);
+}
+
+.unconfirmed {
+  background-color: #FCFBF7;
+  @include svg-img($warning);
+}
+
+.underProcess {
+  background-color: #F7F9FB;
+  @include svg-img($primary);
+}
+
+
+@media (max-width: 767px) {
+  .PageMsg {
+    height: auto;}
+
+  .TMsg {
+    font-size: 1.8rem;
+    padding: 5px;
+    
+    [dir='rtl'] & {
+      margin-top: -10px
+    }
+  }
+
+
+
+  .svg {
+    background-image: none;
+  }
+  .reject .svg {
+    background-color: $redDark;
+  }
+  .canceled .svg {
+    background-color: $gray9;
+  }
+  .accepted .svg {
+    background-color: $greenDark;
+  }
+  .unconfirmed .svg {
+    background-color: $warning;
+  }
+  .underProcess .svg {
+    background-color: $primary;
+  }
+}

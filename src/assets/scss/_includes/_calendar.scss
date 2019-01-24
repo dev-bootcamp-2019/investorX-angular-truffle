@@ -1,0 +1,156 @@
+.calendars-popup {
+	z-index: 1000;
+	.calendars {
+		transition: all 0.3s ease-in-out;
+		width: 310px !important;
+		border: 1px #e0e3e3 solid;
+		background: #e9ecef;
+		box-shadow: 0px 0px 14.7px 0.3px rgba(0, 0, 0, 0.08);
+
+		.calendars-ctrl,.calendars-nav{ display: flex; justify-content: space-between;}
+		
+		.calendars-nav a {
+			color: #444;
+			padding: 5px 10px !important;
+			display: inline-block;
+			font-size: 15px;
+		}
+		
+		.calendars-ctrl{
+			border-bottom: 3px $orange solid;
+			a {
+				color: #444;
+				padding: 5px 10px !important;
+				display: inline-block;
+				font-size: 14px;
+				width: auto;
+			}
+		}
+
+		
+a.calendars-disabled {
+			color: #ccc;
+			cursor: auto;
+		}
+		* {
+			transition: all 0.3s ease-in-out;
+		}
+		.calendars-clear-fix {
+			clear: both;
+		}
+	}
+}
+
+.calendars-disable {
+	opacity: 0.5;
+	filter: alpha(opacity=50);
+}
+
+.calendars-month {
+	border: 0;
+	width: 100%;
+	text-align: center;
+	table {
+		width: 100%;
+		table-layout: fixed;
+		span {
+			color: #c0c0c0 !important;
+		}
+		a {
+			color: #444;
+		}
+		a,
+		span {
+			padding: 8px 1px;
+			font-weight: normal;
+			display: block;
+		}
+		th {
+			background-color: #162C53;
+			padding: 0em;
+			span {
+				color: #fff !important;
+				font-size: 12px;
+			}
+		}
+		th:first-child,
+		td:first-child {
+			border-right: 0;
+		}
+		th:last-child,
+		td:last-child {
+			border-left: 0;
+		}
+		td {
+			padding: 0em;
+			border: 1px solid #F0F0F0;
+			background-color: #FFF;
+		}
+		.calendars-highlight {
+			background-color: #e9ecef;
+			color: $orange;
+		}
+		.calendars-selected {
+			background-color: $orange;
+			color: #fff;
+		}
+		.calendars-today {
+			background-color: #FFF;
+			color: #BB954C;
+		}
+		.calendars-weekend {
+			background-color: #e9ecef;
+			&.calendars-selected, &.calendars-selected.calendars-highlight{
+				color: #FFF;
+				background-color: #BB954C
+			}
+			&.calendars-highlight{
+				background-color: #d7dbde
+		}
+		}
+	}
+	.calendars-other-month {
+		background-color: #f4f4f4 !important;
+	}
+	.calendars-month-year {
+		background: #f4f4f4;
+		width: 48%;
+		color: #666;
+		padding: 5px;
+		margin:3px 0 5px;
+		border: 1px solid #ced5da;
+		font-size: 12px;
+		font-weight: bold;
+	}
+}
+
+.calendars-cmd-prev::before, .calendars-cmd-next::after, .calendars-cmd-clear::before, .calendars-cmd-close::before{
+	font-family: 'Font Awesome 5 Pro';
+	padding: 0 7px;
+}
+.calendars-cmd-prev::before{
+	content: '\f104';
+
+}
+.calendars-cmd-next::after{
+	content: '\f105';
+	[dir='rtl'] & {
+		content: '\f104';
+	}
+}
+.calendars-cmd-clear::before{
+	content: '\f2ed'
+}
+.calendars-cmd-close::before{
+	content: '\f00d'
+}
+
+
+
+
+.is-calendarsPicker.form-control[readonly]{
+	background-color: #FFF;
+    opacity: 1;
+}
+
+

@@ -1,0 +1,7 @@
+{  // Configure glob patterns for excluding files and folders in searches. Inherits all glob patterns from the files.exclude setting.
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/build": true,
+        "**/bower_components": true
+    },
+}

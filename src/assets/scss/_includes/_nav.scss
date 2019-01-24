@@ -1,0 +1,40 @@
+
+/*==============================================================
+0. Navigation Sidebar
+==============================================================*/
+
+.liftNav .ui-widget-content{
+  border: 0;
+  background: transparent;
+}
+
+
+
+
+.ui-menuitem-icon{
+  font-size: 1.5rem;
+  margin: 12px 15px;
+  color:#bebebe;
+}
+.ui-panelmenu .ui-menuitem-icon{
+  margin-left: .25em;
+  margin-right: .25em;
+}
+
+.ui-panelmenu-icon {
+  float: right;
+  padding-top: 15px;
+  [dir='rtl'] & {
+    float: left;
+  }
+}
+
+.ui-submenu-list .ui-panelmenu-icon{
+  padding-top: 7px;
+  padding-right: 25px;
+  color: $gray9;
+  [dir='rtl'] & {
+    padding-right: unset;
+    padding-left: 25px;
+  }
+}

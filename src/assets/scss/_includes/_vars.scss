@@ -1,0 +1,283 @@
+
+$orange:   rgba(187, 149, 76, 0.999); //#BB954C
+
+$gray4: rgba(68, 68, 68, 0.999) ; ////#444
+$gray6: rgba(102, 102, 102, 0.999) ; //#666
+$gray9: rgba(153, 153, 153, 0.999) ; ////#999
+$light: rgba(209, 180, 180, 0.999) ; ////#F6F8FB
+$lighter: rgba(248, 229, 229, 0.999) ; ////#f4f4f4
+
+
+$blue:     rgba(19, 143, 194, 0.999); //#52a4d6
+$blueDark:  rgba(22, 44, 83, 0.999); //#162C53
+$primary:  $darkRed;
+$info: $blueDark;
+
+$green:     rgba(56, 197, 69, 0.999); //#38c545
+$greenDark: rgba(121, 210, 132, 0.9999); //#6bbf77
+$success:  $green;
+
+$red:      rgba(243, 0, 22, 0.999); //#f30016
+$redDark:  rgba(228, 116, 116, 0.9999); //#d64c52
+$danger:   $red;
+
+$yellow:    rgba(216, 192, 90, 0.999) ; //#d8c05a
+$yellowDark: rgba(170, 135, 31, 0.9999); //#aa871f
+$warning:  $yellow;
+
+
+$theme-colors: ();
+$theme-colors: map-merge((
+  "primary":    $primary,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+  "gray4":      $gray4,
+  "gray6":      $gray6,
+  "gray9":      $gray9,
+  "light":      $light,
+  "lighter":    $lighter,
+  "greenDark":  $greenDark,
+  "yellowDark": $yellowDark,
+  "redDark": $redDark,
+  "darkRed": $darkRed,
+  "orange":     $orange,
+  "blue":     $blue,
+  "blueDark":     $blueDark
+), $theme-colors);
+
+
+//
+// Docs color palette classes
+//
+
+@each $color, $value in $theme-colors {
+  .status-#{$color} {
+    color: color-yiq($value);
+    background-color: #{$value};
+  }
+}
+
+
+// Fonts
+$font-size-base:              1rem; // Assumes the browser default, typically `16px`
+
+/*
+36 > 2 rem
+24 > 1.34 rem
+20 > 1.1 rem
+18 >
+16 > 0.9 rem
+14 > 0.8 rem
+*/
+
+$h1-font-size:                $font-size-base * 2 ;
+$h2-font-size:                $font-size-base * 1.34 ;
+$h3-font-size:                $font-size-base * 1.125 ;
+$h4-font-size:                $font-size-base ;
+$h5-font-size:                $font-size-base * 0.9 ;
+$h6-font-size:                $font-size-base * 0.8 ;
+
+
+$display3-size:               4rem;
+$display4-size:               3rem;
+
+$headings-margin-bottom:      0;
+$headings-font-weight:        inherit;
+$headings-line-height:        inherit;
+
+// Spacing
+//
+// Control the default styling of most Bootstrap elements by modifying these
+// variables. Mostly focused on spacing.
+// You can add more entries to the $spacers map, should you need more variation.
+
+
+
+$spacers: (
+  0: 0,
+  1: ($spacer * .25),
+  2: ($spacer * .5),
+  3: $spacer,
+  4: ($spacer * 1.5),
+  5: ($spacer * 3),
+  6: ($spacer * 5)
+);
+
+// Body
+//
+// Settings for the `<body>` element.
+
+$body-bg:                   #FBFCFF;
+$body-color:                $gray4;
+
+
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px, // Small screen / phone
+  md: 768px, // Medium screen / tablet
+  lg: 992px, // Large screen / desktop
+  xl: 1200px, // Extra large screen / wide desktop
+  xxl: 1400px, // Extra large screen / wide desktop
+);
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px,
+);
+
+
+// Options
+//
+// Border radius = 0.
+
+$enable-rounded:            false ;
+
+// Links
+//
+// Style anchor elements.
+
+$link-color:                $darkRed;
+$link-hover-color:          darken($link-color, 15%);
+$link-hover-decoration:     none;
+
+
+// Alerts
+//
+// Define alert colors, border radius, and padding.
+
+$alert-link-font-weight:            normal;
+
+
+// Components
+//
+
+$border-color:  $light;
+
+$list-group-border-color:  $light;
+
+// Tables
+//
+// Customizes the `.table` component with basic values, each used across all table variations.
+
+
+$table-accent-bg:             rgba($gray6,.05) ;
+$table-hover-bg:              rgba($gray4,.075) ;
+$table-cell-padding:          .65rem;
+$table-border-width:          0;
+
+
+// Pagination
+
+$pagination-padding-y:              .3rem;
+$pagination-padding-x:              .65rem;
+$pagination-line-height:            1.5;
+
+$pagination-color:                  $gray9;
+$pagination-border-color:           #FFF;
+
+$pagination-hover-color:            $gray4;
+$pagination-hover-bg:              theme-color("lighter");
+$pagination-hover-border-color:     theme-color("light");
+
+$pagination-active-color:           $gray4;
+$pagination-active-bg:              theme-color("lighter");
+$pagination-active-border-color:    theme-color("light");
+
+$pagination-disabled-color:         $light;
+$pagination-disabled-border-color:  $lighter;
+
+
+// Tooltips
+
+$tooltip-color:                     $white ;
+$tooltip-bg:                        $gray6 ;
+$tooltip-arrow-color:               $gray6;
+
+
+// Breadcrumbs
+
+$breadcrumb-padding-y:              0;
+$breadcrumb-padding-x:              0;
+$breadcrumb-item-padding:           .7rem;
+
+$breadcrumb-margin-bottom:          0;
+
+$breadcrumb-bg:                     none;
+$breadcrumb-divider:                "";
+
+
+
+// Buttons
+//
+// For each of Bootstrap's buttons, define text, background and border color.
+
+$input-btn-padding-y:         .5rem;
+$btn-link-disabled-color:     $gray6;
+
+// Badges
+
+$badge-font-size:                   0.88rem ;
+$badge-font-weight:                 $font-weight-normal ;
+$badge-padding-y:                   .4em ;
+
+
+// Forms
+
+$input-disabled-bg:                     $lighter ;
+$input-color:                           $gray4;
+$input-border-color:                    $light ;
+$input-box-shadow:                      inset 0 1px 1px rgba($orange,.075) ;
+$input-placeholder-color:               $light ;
+
+
+$custom-control-gutter:                 1.7rem;
+$custom-control-indicator-size:         1.30rem;
+$custom-control-indicator-bg:           #FFF;
+$custom-control-indicator-disabled-bg:          $light;
+$custom-control-description-disabled-color:     $light;
+$custom-control-indicator-checked-bg:           $white;
+$custom-control-indicator-active-bg:            $white;
+$custom-checkbox-indicator-icon-checked:        str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='#{$orange}' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E"), "#", "%23") ;
+$custom-checkbox-indicator-indeterminate-bg:    $white;
+$custom-radio-indicator-icon-checked:           str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3E%3Ccircle r='3' fill='#{$orange}'/%3E%3C/svg%3E"), "#", "%23") ;
+
+
+$custom-select-disabled-bg:         $gray-200 ;
+$custom-select-bg-size:             13px 16px ; // In pixels because image dimensions
+$custom-select-indicator-color:     #959595 ;
+$custom-select-indicator:           str-replace(url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4.2 5'%3E%3Cpath fill='#{$custom-select-indicator-color}' d='M.5 1.4l-.4.4 2 2 2-2-.4-.4-1.6 1.5'/%3E%3C/svg%3E"), "#", "%23") ;
+
+
+// Modals
+
+// Padding applied to the modal body
+$modal-inner-padding:               25px;
+$modal-header-padding:              25px;
+
+$modal-backdrop-opacity:            .7 ;
+$modal-backdrop-bg:                 $gray4;
+$modal-header-border-color:         $lighter;
+
+$modal-header-border-width:         0;
+$modal-footer-border-width:         0;
+
+$modal-md:                          550px;
+
+// Close
+
+$close-font-weight:                 $font-weight-normal;
+$close-color:                       $gray9;

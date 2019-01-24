@@ -1,0 +1,47 @@
+/* ==========================================================================
+Login Styles
+========================================================================== */
+
+.popover{
+    max-width: 370px;
+    border: 0;
+    margin-right:15px;
+    box-shadow: 0px 0px 14.7px 0.3px rgba(0, 0, 0, 0.08);
+  }
+  .mrg25{
+    margin-left: -25px;
+  }
+  
+  .popover-title{
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .arrow {
+    width: 0px;
+      height: 0px;
+      border-top: 20px solid transparent;
+      border-bottom: 20px solid transparent;
+      border-right: 15px solid #F0F0F0;
+      left: -14px;
+      top: calc(50% - 20px);
+  }
+  
+  hr.popupdevider {
+    height: 20px;
+    border: 0;
+    margin-bottom:0;
+    background: linear-gradient(to top, $white 0%, $lighter 100%);
+  }
+  .popover-title{
+    padding:20px 25px 5px;
+  }
+  
+
+
+
+
+
+
+
+

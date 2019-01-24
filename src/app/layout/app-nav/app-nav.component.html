@@ -1,0 +1,10 @@
+<p-menubar [model]="items" [autoDisplay]="false">
+<span style="position: relative;">
+  <span *ngIf="this.web3Service.wallet" style="color: darkgrey;">
+    Welcome 
+    <a href="https://etherscan.io/address/{{this.web3Service.wallet}}" 
+        target=”_blank”
+        style="color: black; font-weight: bold;">{{this.web3Service.wallet}}</a>
+  </span>
+</span>
+</p-menubar>
