@@ -1,5 +1,5 @@
 
-# InvestorX 
+# InvestorX <img src="./src/assets/images/logo.png" width="45" />
 
 > ***Crypto in-Time Investment Collaboration ÐApp***
 
@@ -13,7 +13,7 @@ Voting for the best Gurus' wallets (technically the best investment Ethereum add
 
 ## Investment Guru
 
-Those Guru supposed to be experienced Crypto-Investors, such that, every investor has a different collection of Ether and ERC20 tokens. Those gurus can submit as many wallets as different strategies they have. And they may submit their wallets(s) with a different or similar name(s) at each election cycle. 
+Those Guru supposed to be experienced crypto-investors, such that, every investor has a different collection of Ether and ERC20 tokens. Those gurus can submit as many wallets as different strategies they have. And they may submit their wallets(s) with a different or similar name(s) at each election cycle. 
 The submitted wallet(s) of a guru will contain investment advice. That is the combination of Ether and Tokens that others are advised to follow. i.e. Other people are advised to have the same suggested percentage, of Ether and tokens, similar to the suggested wallets. 
 
 ## Follower / Voter
@@ -24,12 +24,12 @@ A follower is basically a voter who votes for the best wallet(s), that contain(s
 
 This is the one who is responsible for opening and closing an election.
 
-# Current Smart Contract Implementation handles
+# Current Implementation 
+Current smart contracts handle:
 
 - Receiving Gurus' applications (names and wallets)
 - Accepting votes from Followers
 - Running (starting & closing) the election by Chairperson 
-
 
 # Understanding the Low-level Execution Flow
 
@@ -87,16 +87,34 @@ To deploy the smart contracts:
 To run the website (this will open the default browser):
 	ng serve --open
 
-# Web Pages
+# Exploring the Website
+The website will show the current active wallet at the top of the page bellow the banner. It will read it from the injected Web3. So, if you are using MetaMask, it will show a popup requesting your approval to connect.
+<img src="./screenshots/metamask-connect-request.png" />
+
+The current implementation of the website contains the following pages:
  - **Nomination**
  Viewing this page depends on the wallet authorization. 
 	- For normal users: They can nominate themselves to be Gurus.
-	- For Factory Chairperson: They can nominate others by adding there names and wallets.
-	To view the UI differences, change the wallet at MetaMask form a normal account to the Factor Chairperson, and vice versa.
+	- For Chairperson: They can nominate others by adding there names and wallets.
+	To view the UI differences, change the wallet at MetaMask form a normal account to the Factor Chairperson, and vice versa. The page will have an immediate react to the account change.
+	
+Bellow is how the page look like, when first opened by anyone other than the chairperson:
+<img src="./screenshots/nomination-page-before-nomination.png" />
+
+If the user nominate himself/hereself, the page look will display:
+<img src="./screenshots/nomination-page-after-nomination.png" />
+
+And here is who the page react differently to the chairperson:
+<img src="./screenshots/nomination-page-chairperson-before-nomination.png" />
+
  - **Voting**
  It contains a list of all Gurus with the ability to vote for any of them.
+ 
+<img src="./screenshots/voting-page.png" />
+ 
  - **Election Management** 
- This is just a demonstrative page that will be only shown for the ElectionFactory chairperson. So, to view it, use the same wallet that deployed the smart contract. (If you are using Ganache 5, at MetaMask import an account with this private key: 0x6c4c683787bee69235c4156d9ee495c4914fd6106514d565cdeb3fd9ddbe5b6c)
+ This is just a demonstrative page that will be only shown for the ElectionFactory chairperson. So, to view it at your test development environment, use the same wallet that deployed the smart contract. (If you are using Ganache 5, at MetaMask import an account with this private key: 0x6c4c683787bee69235c4156d9ee495c4914fd6106514d565cdeb3fd9ddbe5b6c)
+
 
 # Future Work
 To have a complete project, some few more things have to be done like:

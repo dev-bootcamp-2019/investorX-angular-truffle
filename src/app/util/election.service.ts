@@ -4,6 +4,7 @@ import { Web3Service } from './web3.service';
 
 import { ElectionModel } from '../classes/electionmodel';
 import { Guru } from '../classes/guru';
+import { stringify } from '@angular/core/src/util';
 // import { EventsHelper } from '../classes/eventshelper';
 
 declare let require: any;
@@ -24,7 +25,7 @@ export class ElectionService {
     this.ElectionContract = await this.web3Service.artifactsToContract(Election_artifacts);
     this.web3Service.accountsObservable.subscribe(wallet => this.updateChairperson());
     const deployedContract = await this.ElectionContract.deployed();
-    
+
     // Events cannot work if Web3 v1 and Ganache 6 used:
     // https://ethereum.stackexchange.com/questions/58072/watching-solidity-event-gives-error-typeerror-watch-is-not-a-function/66022#66022
     // For that I did not use events.
@@ -53,10 +54,10 @@ export class ElectionService {
       } else {
         const deployedContract = await this.ElectionContract.deployed();
         const gurusCount = parseInt(await deployedContract.getGurusCount.call(), 10);
-        if(this.electionModel.gurus === undefined || this.electionModel.gurus.length !== gurusCount)
-        this.electionModel.gurus = new Array(gurusCount);
+        if (this.electionModel.gurus === undefined || this.electionModel.gurus.length !== gurusCount)
+          this.electionModel.gurus = new Array(gurusCount);
         for (let index = 0; index < gurusCount; index++) {
-          if(this.electionModel.gurus[index] === undefined)
+          if (this.electionModel.gurus[index] === undefined)
             this.electionModel.gurus[index] = new Guru();
 
           const gurusWallet = await deployedContract.gurusArray.call(index);
@@ -81,6 +82,20 @@ export class ElectionService {
     const delay = new Promise(resolve => setTimeout(resolve, 1000));
     await delay;
     this.readGurus();
+  }
+
+  public async getGuru(gurusWallet: string): Promise<Guru> {
+    const deployedContract = await this.ElectionContract.deployed();
+    const gurusRaw = await deployedContract.gurus.call(gurusWallet);
+    const guru = new Guru();
+    guru.name = this.web3Service.Web3.utils.toUtf8(gurusRaw[0]);
+    if (guru.name == "") {
+      return null;
+    }
+    const votesCount = parseInt(await deployedContract.getVotesCount.call(gurusWallet), 10);
+    guru.votesCount = votesCount;
+    guru.wallet = gurusWallet;
+    return guru;
   }
 
   private async getGurusCount(): Promise<number> {

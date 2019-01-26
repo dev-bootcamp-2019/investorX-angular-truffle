@@ -88,8 +88,8 @@ export class Web3Service {
       if (!this.accounts || this.accounts.length !== accs.length || this.accounts[0] !== accs[0]) {
         console.log('Observed new accounts');
 
-        this.accountsObservable.next(accs);
         this.accounts = accs;
+        this.accountsObservable.next(accs);
       }
 
       this.ready = true;

@@ -23,7 +23,7 @@ contract Election is ElectionBase {
     event ElectionClosed(address indexed chairperson);
     
     modifier electionOpened() {
-        require(closed == false);
+        require(closed == false, "Election is closed");
         _;
     }
     
@@ -54,7 +54,7 @@ contract Election is ElectionBase {
     /// @dev The modfiers whenNotPaused & electionOpened are called
     /// inside the sub-fuction _addGuru
     function addGuru(bytes32 _name, address _wallet) public onlyChairperson {
-        require(_wallet != address(0x0));
+        require(_wallet != address(0x0), "Invalid wallet");
         _addGuru(_name, _wallet);
     }
 
@@ -67,8 +67,8 @@ contract Election is ElectionBase {
     
     /// @notice Only doable if election is not closed.
     function _addGuru(bytes32 _name, address _wallet) private electionOpened whenNotPaused {
-        require(_name != 0);
-        require(gurus[_wallet].name == 0); //y has not been added early.
+        require(_name != 0, "Name cannot be black");
+        require(gurus[_wallet].name == 0, "Guru was already added");
         
         emit GuruAdded(_wallet, _name, msg.sender);
         
@@ -77,8 +77,8 @@ contract Election is ElectionBase {
     }
 
     function vote(address _wallet) public electionOpened whenNotPaused {
-        require(gurus[_wallet].name != 0); //guru should be exist
-        require(gurus[_wallet].voters[msg.sender] == false); //The voter has not already voted
+        require(gurus[_wallet].name != 0, "Guru does not exist"); //guru should be exist
+        require(gurus[_wallet].voters[msg.sender] == false, "You had already voted for this guru"); //The voter has not already voted
         
         emit Voted(_wallet, msg.sender);
         

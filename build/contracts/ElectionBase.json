@@ -1874,14 +1874,103 @@
   },
   "networks": {
     "5777": {
-      "events": {},
+      "events": {
+        "0x0c94bd78906673549bca6b8028fe63bc67d94221969491c23a7b75ef2c796354": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "previousChairperson",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "name": "newChairperson",
+              "type": "address"
+            }
+          ],
+          "name": "ChairpersonChanged",
+          "type": "event",
+          "signature": "0x0c94bd78906673549bca6b8028fe63bc67d94221969491c23a7b75ef2c796354"
+        },
+        "0x62e78cea01bee320cd4e420270b5ea74000d11b0c9f74754ebdbfc544b05a258": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "account",
+              "type": "address"
+            }
+          ],
+          "name": "Paused",
+          "type": "event",
+          "signature": "0x62e78cea01bee320cd4e420270b5ea74000d11b0c9f74754ebdbfc544b05a258"
+        },
+        "0x5db9ee0a495bf2e6ff9c91a7834c1ba4fdd244a5e8aa4e537bd38aeae4b073aa": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "account",
+              "type": "address"
+            }
+          ],
+          "name": "Unpaused",
+          "type": "event",
+          "signature": "0x5db9ee0a495bf2e6ff9c91a7834c1ba4fdd244a5e8aa4e537bd38aeae4b073aa"
+        },
+        "0x6719d08c1888103bea251a4ed56406bd0c3e69723c8a1686e017e7bbe159b6f8": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "account",
+              "type": "address"
+            }
+          ],
+          "name": "PauserAdded",
+          "type": "event",
+          "signature": "0x6719d08c1888103bea251a4ed56406bd0c3e69723c8a1686e017e7bbe159b6f8"
+        },
+        "0xcd265ebaf09df2871cc7bd4133404a235ba12eff2041bb89d9c714a2621c7c7e": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "account",
+              "type": "address"
+            }
+          ],
+          "name": "PauserRemoved",
+          "type": "event",
+          "signature": "0xcd265ebaf09df2871cc7bd4133404a235ba12eff2041bb89d9c714a2621c7c7e"
+        },
+        "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "previousOwner",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "name": "newOwner",
+              "type": "address"
+            }
+          ],
+          "name": "OwnershipTransferred",
+          "type": "event",
+          "signature": "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0"
+        }
+      },
       "links": {},
-      "address": "0x1604a878eAF1Fb683beE01B6c45Af04d059c6569",
-      "transactionHash": "0xb4ad2df05489ae0bfc806de831faf1ffbf5b1e1b19e14b7a9e06b967aeb79298"
+      "address": "0x612f7c866f65bFA947a5514eF76749DFBf7564A2",
+      "transactionHash": "0x82d9359cf970e87a7cdb49b541ef8d0e49bc6ea69de0a77d21587a50358a87c9"
     }
   },
   "schemaVersion": "3.0.1",
-  "updatedAt": "2019-01-23T15:15:04.485Z",
+  "updatedAt": "2019-01-26T13:53:35.652Z",
   "devdoc": {
     "methods": {
       "isOwner()": {

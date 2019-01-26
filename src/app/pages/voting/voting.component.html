@@ -5,8 +5,7 @@
 
 
 <div class="table table-responsive form-group">
-  <p-table #table 
-    class="table tbl-filter consents" rowHover="true" sortMode="none" dataKey="index" [loading]="loading"
+  <p-table #table class="table tbl-filter consents" rowHover="true" sortMode="none" dataKey="index" [loading]="loading"
     [columns]="cols" [responsive]="true" [value]="this.electionService.electionModel.gurus" paginator="true" rows="50"
     [sortField]="cols[0].field" [(selection)]="selectedPermissions" (onRowSelect)="handleRowSelection($event)"
     (onRowUnselect)="handleRowDeselection($event)">
@@ -22,16 +21,33 @@
       </tr>
     </ng-template>
     <ng-template pTemplate="body" let-i="rowIndex" let-rowData let-columns="columns">
-      <tr [pSelectableRow]="rowData"
-        *ngIf="rowData">
-        <td *ngFor="let col of columns">
+      <tr [pSelectableRow]="rowData" *ngIf="rowData">
+        <!-- <td *ngFor="let col of columns">
           <span class="white-space-pre-line">{{rowData[col.field]}}</span>
+          <a title="View at EtherScan.io">
+            <span style="font-size: x-large; border:none; margin-bottom: 6px;"
+              pButton icon="fas fa-external-link-alt" iconPos="left" class="btn-outline-darkRed" ></span>
+          </a>
+      
+        </td> -->
+        <td>
+          <span class="outline-darkRed">{{rowData['name']}}</span>
+        </td>
+        <td>
+          <span style="font-family: courier new;">{{rowData['wallet']}}</span>
+          <a title="View at EtherScan.io" target="_blank" href='{{"https://etherscan.io/address/" + rowData["wallet"]}}'>
+            <span style="font-size: x-large; border:none; margin-bottom: 6px;" pButton icon="fas fa-external-link-alt"
+              iconPos="left" class="btn-outline-yellowDark"></span>
+          </a>
+        </td>
+        <td>
+          {{rowData['votesCount']}}
         </td>
         <td>
           <button *ngIf="!rowData['isElectedByCurrentUser']" (click)="vote(rowData)" style="font-size: x-large; border:none; margin-bottom: 6px;"
-            pButton icon="fas fa-thumbs-up" iconPos="left" class="btn-outline-darkRed"></button>
-          <button *ngIf="rowData['isElectedByCurrentUser']" disabled="disabled" style="font-size: x-large; border:none; margin-bottom: 6px;" pButton
-            icon="fas fa-thumbs-up" iconPos="left" class="btn-outline-gray6"></button>
+            pButton icon="fas fa-rocket" iconPos="left" class="btn-outline-darkRed" title="Vote for this guru"></button>
+          <button *ngIf="rowData['isElectedByCurrentUser']" disabled="disabled" style="font-size: x-large; border:none; margin-bottom: 6px;"
+            pButton icon="fas fa-rocket" iconPos="left" class="btn-outline-gray6" title="You already voted"></button>
 
         </td>
       </tr>
