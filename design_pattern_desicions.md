@@ -16,3 +16,6 @@ At the Election Factory smart contract, it is not possible to add/open a new Ele
 
 ## Factory Contract
 The Election Factory smart contract is used for creating and controlling the Election smart contracts as child contracts; And, it stores their addresses. 
+
+## Upgradability
+The Factory smart contract allows for the addition of any compatible Election smart contract. This functionality is enabled through the function: `addElection(address _electionContract)`. This is an extremely simple allow for upgradability where the Election Factory contract is also a proxy contract that adds, communicate and keeps track for any compatible Election contract.
