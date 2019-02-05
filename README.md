@@ -74,18 +74,37 @@ Running `truffle test` in the Terminal should output something like:
 Note: `ElectionBase` is the base contract for both `Election` and `ElectionFactory`. And it is not supposed to be deployed alone. However, a version is deployed to apply test cases.
 
 # Running the website
+
+**Used Versions**
+
+ - NPM v5.8.0 
+ - Truffle v5.0.2 (core: 5.0.2) 
+ - Solidity v0.5.0 (solc-js)
+ - Node v8.11.2
+
+**Installation, Deployment and Running Steps**
+
 Kindly follow these steps in order:
  - Be sure to have the folder name exactly like this:
 > investorX-angular-truffle
 Note: the folder name has to be exactly `investorX-angular-truffle` or else, the Angular will not work and the website will show an [error](https://stackoverflow.com/questions/54309107/after-renaming-angular-folder-i-got-the-error-you-seem-to-not-be-depending-on).
 
  - At the project folder "investorX-angular-truffle", open the Terminal and type the following:
-To install the node_modules:
-	 npm install
-To deploy the smart contracts:
-	 truffle migrate --reset
-To run the website (this will open the default browser):
-	ng serve --open
+
+   - To install the node_modules:
+   
+		`npm install`
+    
+   - To deploy the smart contracts:
+   
+		`truffle migrate --reset`
+    
+   - To run the website (this will open the default browser):
+   
+		`ng serve --open`
+
+
+
 
 # Exploring the Website
 The website will show the current active wallet at the top of the page bellow the banner. It will read it from the injected Web3. So, if you are using MetaMask, it will show a popup requesting your approval to connect.
