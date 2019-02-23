@@ -34,7 +34,9 @@
 /* 1.2 Font Awesome */
 
 @import "../scss/_fontawesome/fontawesome.scss";
-@import "../scss/_fontawesome/fa-regular.scss";
+@import "../scss/_fontawesome/regular.scss";
+@import "../scss/_fontawesome/solid.scss";
+@import "../scss/_fontawesome/brands.scss";
 /* Primeng ..............................................................................*/
 
 @import "../scss/../scss/primeng/primeng.css";
@@ -64,8 +66,8 @@
 
 /* 1.1 Font Awesome */
 
-//@import "../scss/_fontawesome/fontawesome.scss";
-//@import "../scss/_fontawesome/fa-regular.scss";
+@import "../scss/_fontawesome/fontawesome.scss";
+@import "../scss/_fontawesome/regular.scss";
 /*------------------------------------------------------------
  2. Common Styles | Padding, Margin, a, headings | etc.
 --------------------------------------------------------------*/

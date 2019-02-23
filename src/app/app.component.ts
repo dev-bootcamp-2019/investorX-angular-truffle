@@ -1,9 +1,4 @@
 import { Component } from '@angular/core';
-// import { MenuModule } from 'primeng/menu';
-import { MenubarModule } from 'primeng/menubar';
-import { MenuItem } from 'primeng/api';
-
-import { Web3Service } from './util/web3.service';
 
 @Component({
   selector: 'app-root',
@@ -15,8 +10,4 @@ import { Web3Service } from './util/web3.service';
 })
 export class AppComponent {
   title = 'InvestorX';
-
-  constructor(public web3Service: Web3Service) {
-
-  }
 }

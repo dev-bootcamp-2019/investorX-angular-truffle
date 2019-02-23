@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('investorX-angular-truffle App', () => {
+describe('InvestorX App', () => {
   let page: AppPage;
 
   beforeEach(() => {

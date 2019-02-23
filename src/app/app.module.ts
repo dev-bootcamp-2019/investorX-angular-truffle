@@ -44,6 +44,7 @@ import { ElectionManagmentComponent } from './pages/election-managment/election-
 
   ],
   imports: [
+
     BrowserModule,
     FormsModule,
     HttpModule,

@@ -7,7 +7,7 @@ import {Web3Service} from './web3.service';
     CommonModule
   ],
   providers: [
-    Web3Service,
+    Web3Service
   ],
   declarations: []
 })

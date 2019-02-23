@@ -679,3 +679,19 @@ Steps (Wizard)
 .ui-tabview-panel.ui-helper-hidden {
     display: none !important;
 }
+
+.ui-button-icon-only .ui-button-text, .ui-button-text-empty .ui-button-text {
+  display: none;
+}
+
+
+.ui-button-icon-only {
+  font-size: x-large !important; 
+  border:none !important; 
+  margin: 0px 5px 5px 5px !important;
+  padding: 5px 5px 5px 5px !important;
+}
+
+.table th, .table td {
+  vertical-align: middle !important;
+}

@@ -77,16 +77,17 @@ Note: `ElectionBase` is the base contract for both `Election` and `ElectionFacto
 
 **Used Versions**
 
- - NPM v5.8.0 
- - Truffle v5.0.2 (core: 5.0.2) 
- - Solidity v0.5.0 (solc-js)
+ - Truffle v5.0.2
+ - Solidity v0.5.0
+ - Angular v7.1.0
  - Node v8.11.2
-
+ - NPM v6.8.0 
+ 
 **Installation, Deployment and Running Steps**
 
-Kindly follow these steps in order:
+Follow those steps in-order:
  - Be sure to have the folder name exactly like this:
-> investorX-angular-truffle
+> investorX
 Note: the folder name has to be exactly `investorX-angular-truffle` or else, the Angular will not work and the website will show an [error](https://stackoverflow.com/questions/54309107/after-renaming-angular-folder-i-got-the-error-you-seem-to-not-be-depending-on).
 
  - At the project folder "investorX-angular-truffle", open the Terminal and type the following:

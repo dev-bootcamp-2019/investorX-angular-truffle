@@ -1,9 +1,9 @@
 #!/usr/bin/env sh
 set -x
 set -e
-testrpc -l 100000000 -m "glow lunar tell fee erode example alert pelican hand device kitchen wear" > /dev/null &
-TESTRPC_PID=$!
-trap "kill $TESTRPC_PID" EXIT INT TERM
+ganache-cli -m "candy maple cake sugar pudding cream honey rich smooth crumble sweet treat" > /dev/null &
+GANACHE_PID=$!
+trap "kill $GANACHE_PID" EXIT INT TERM
 
 truffle compile
 truffle migrate

@@ -25,7 +25,7 @@
         <!-- <td *ngFor="let col of columns">
           <span class="white-space-pre-line">{{rowData[col.field]}}</span>
           <a title="View at EtherScan.io">
-            <span style="font-size: x-large; border:none; margin-bottom: 6px;"
+            <span 
               pButton icon="fas fa-external-link-alt" iconPos="left" class="btn-outline-darkRed" ></span>
           </a>
       
@@ -36,7 +36,7 @@
         <td>
           <span style="font-family: courier new;">{{rowData['wallet']}}</span>
           <a title="View at EtherScan.io" target="_blank" href='{{"https://etherscan.io/address/" + rowData["wallet"]}}'>
-            <span style="font-size: x-large; border:none; margin-bottom: 6px;" pButton icon="fas fa-external-link-alt"
+            <span class="inline-bottom-font" pButton icon="fas fa-external-link-alt"
               iconPos="left" class="btn-outline-yellowDark"></span>
           </a>
         </td>
@@ -44,9 +44,9 @@
           {{rowData['votesCount']}}
         </td>
         <td>
-          <button *ngIf="!rowData['isElectedByCurrentUser']" (click)="vote(rowData)" style="font-size: x-large; border:none; margin-bottom: 6px;"
+          <button *ngIf="!rowData['isElectedByCurrentUser']" (click)="vote(rowData)" 
             pButton icon="fas fa-rocket" iconPos="left" class="btn-outline-darkRed" title="Vote for this guru"></button>
-          <button *ngIf="rowData['isElectedByCurrentUser']" disabled="disabled" style="font-size: x-large; border:none; margin-bottom: 6px;"
+          <button *ngIf="rowData['isElectedByCurrentUser']" disabled="disabled" 
             pButton icon="fas fa-rocket" iconPos="left" class="btn-outline-gray6" title="You already voted"></button>
 
         </td>
