@@ -11,6 +11,7 @@ import { Web3Service } from './util/web3.service';
 
 import { MenuModule } from 'primeng/menu';
 import { MenubarModule } from 'primeng/menubar';
+import {CardModule} from 'primeng/card';
 
 import {
   AppLayoutComponent, AppFooterComponent, AppHeaderComponent, AppNavComponent
@@ -28,6 +29,7 @@ import { ElectionService } from './util/election.service';
 import { ElectionFactoryService } from './util/election-factory.service';
 import { NominationComponent } from './pages/nomination/nomination.component';
 import { VotingComponent } from './pages/voting/voting.component';
+import { TestnetErrorComponent } from './pages/testnet-error/testnet-error.component';
 import { ElectionManagmentComponent } from './pages/election-managment/election-managment.component';
 
 @NgModule({
@@ -40,6 +42,7 @@ import { ElectionManagmentComponent } from './pages/election-managment/election-
     MessagesComponent,
     NominationComponent,
     VotingComponent,
+    TestnetErrorComponent,
     ElectionManagmentComponent,
 
   ],
@@ -60,6 +63,7 @@ import { ElectionManagmentComponent } from './pages/election-managment/election-
 
     MenuModule,
     MenubarModule,
+    CardModule,
 
     SharedModule,
     RouterModule.forRoot(ROUTES, {
